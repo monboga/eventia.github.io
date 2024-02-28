@@ -1,3 +1,3 @@
 const contenedorQR = document.getElementById('contenedorQR'); //accedemos al elemento
 
-new QRCode(contenedorQR, 'verification.html');
+new QRCode(contenedorQR, 'https://monboga.github.io/eventia.github.io/pages/verification.html');
