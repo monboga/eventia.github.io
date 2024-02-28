@@ -1,77 +1,84 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>menu - eventia</title>
-    <!-- link css -->
-    <link rel="stylesheet" href="../styles/main.css">
-    <!-- link bootstrap css -->
-    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f0f8ea; /* Verde claro */
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
 
-    <!-- link font awesome -->
-    <link rel="stylesheet" href="../styles/all.min.css">
+    .menu {
+      background-color: #f0f8ea; /* Verde claro */
+      padding: 20px;
+      text-align: center;
+    }
+
+    .menu h1 {
+      margin-bottom: 30px;
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .option {
+      width: 30%;
+      border: 2px solid #4CAF50; /* Verde */
+      border-radius: 5px;
+      padding: 20px;
+      cursor: pointer;
+    }
+
+    .option:hover {
+      background-color: #4CAF50; /* Verde */
+      color: #ffffff; /* Blanco */
+    }
+
+    .option img {
+      width: 80px;
+      height: 80px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+  </style>
 </head>
 <body>
-    <header class="container-fluid bg-success">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid ">
-              <a class="navbar-brand" href="#">FIME</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Agendar</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Fotografias</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Mi agenda</a>
-                  </li>
-                </ul>
-                <button class="btn btn-outline-light">Cerrar sesión</button>
-              </div>
-            </div>
-          </nav>
-    </header>
 
-    <section class="vh-100 d-flex align-items-center">
-        <div class="container">
-            <div class="row gap-4 mx-auto">
-                <div class="card " style="width: 18rem;">
-                    <div class="card-body d-flex flex-column justify-content-center text-center">
-                        <i class="fa-solid fa-calendar-days fs-1"></i>
-                      <h5 class="card-title mt-5">Agendar</h5>
-                        <div class="d-flex justify-content-center">
-                            <a href="#" class="btn btn-success align-self-end">Entrar</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card " style="width: 18rem;">
-                    <div class="card-body d-flex flex-column justify-content-center text-center">
-                        <i class="fa-solid fa-camera fs-1"></i>
-                      <h5 class="card-title mt-5">Mis Fotos</h5>
-                        <div class="d-flex justify-content-center">
-                            <a href="#" class="btn btn-success align-self-end">Entrar</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card " style="width: 18rem;">
-                    <div class="card-body d-flex flex-column justify-content-center text-center">
-                        <i class="fa-solid fa-book fs-1"></i>
-                      <h5 class="card-title mt-5">Mi Agenda</h5>
-                        <div class="d-flex justify-content-center">
-                            <a href="#" class="btn btn-success align-self-end">Entrar</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- script boostrap -->
-    <script src="../js/bootstrap.bundle.min.js"></script>
+<!-- Menú -->
+<div class="menu">
+  <h1>FACULTAD DE INGENIERIA MECANICA Y ELECTRICA</h1>
+  <h2>EVENTIA</h2>
+  <div class="options">
+    <div class="option" onclick="navigateTo('agendar.html')">
+      <img src="../assets/calendario.jpg" alt="Agendar">
+      <p>AGENDAR</p>
+      <button class="btn btn-success">Entrar</button>
+    </div>
+    <div class="option" onclick="navigateTo('mis_fotos.html')">
+      <img src="../assets/camara.png" alt="Mis Fotos">
+      <p>MIS FOTOS</p>
+      <button class="btn btn-success">Entrar</button>
+    </div>
+    <div class="option" onclick="navigateTo('mi_agenda.html')">
+      <img src="../assets/agenda.png" alt="Mi Agenda">
+      <p>MI AGENDA</p>
+      <button class="btn btn-success">Entrar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function navigateTo(page) {
+    window.location.href = page;
+  }
+</script>
+
 </body>
 </html>
