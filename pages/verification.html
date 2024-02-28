@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Verificación</title>
     <!-- main css -->
-    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
     <!-- bootstrap css -->
-    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../styles/bootstrap.min.css" />
     <!-- link del font awesome -->
-    <link rel="stylesheet" href="styles/all.min.css" />
+    <link rel="stylesheet" href="../styles/all.min.css" />
+    <!-- smtp js -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
   </head>
   <body>
     <!-- menu de navegación -->
     <nav class="navbar navbar-dark navbar-expand-lg bg-success">
       <div class="container-fluid">
         <a class="navbar-brand me-auto" href="#home">
-          <img src="assets/fime-logo.png" alt="" class="img-logo mx-lg-2" />
+          <img src="../assets/fime-logo.png" alt="" class="img-logo mx-lg-2" />
           EVENTIA
         </a>
 
@@ -67,7 +69,38 @@
       </div>
     </nav>
 
-    
+    <!-- seccion de formulario de verificación -->
+        <div class="container d-flex justify-content-center align-items-center min-vh-100">
+            <div class="row border rounded-5 shadow bg-white p-3 box-area">
+                <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box bg-success">
+                        <div class="featured-image mb-3">
+                            <img src="../assets/secure.png" class="img-fluid" alt="" srcset=""/>
+                        </div>
+                        <h5 class="text-white fs-2">Verificación de correo electrónico</h5>
+                        <small class="text-wrap text-center text-white">Necesitamos que verifiques tu correo para continuar</small>
+                </div>
+                <div class="col-md-6 d-flex align-items-center right-box">
+                    <div class="row align-items-center">
+                        <div class="header-text mb-4">
+                            <h5>Enviar correo electrónico</h5>
+                            <p>Se enviará un código a tu bandeja de entrada.</p>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="email" id="email" class="form-control form-control-lg bg-light" placeholder="correo@correo.com">
+                        </div>
+                        <div class="input-group mb-2 otpverify">
+                            <input type="text" id="otp_in" class="form-control form-control-lg bg-light" placeholder="1234">
+                            <button id="otp_btn" class="btn btn-success">Verificar</button>
+                        </div>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-success" onclick="sendOTP()">Enviar código</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
     <!-- footer -->
     <footer class="bg-success text-white pt-5 pb-4">
       <div class="container text-center text-md-left">
@@ -114,6 +147,43 @@
       </div>
     </footer>
     <!-- script bootstrap -->
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <!-- script de verificacion -->
+    <script>
+        function sendOTP() {
+    const email = document.getElementById('email');
+    const otpVerify = document.getElementsByClassName('otpverify')[0];
+
+    let otp_val = Math.floor(Math.random() * 10000);
+    let emailBody = `<h2>Tú código es </h2> ${otp_val}`;
+
+    Email.send({
+        SecureToken : "b413eee5-d7e6-45eb-9627-d2ad9d52c48b",
+        To : email.value,
+        From : 'eventia@gmail.com',
+        Subject : 'Codigo de verificación',
+        Body : emailBody,
+    }).then(
+        message => {
+            if (message === "OK") {
+                alert("Tu codigo fue enviado a " + email.value);
+
+                otpVerify.style.display = "flex";
+                const otp_inp = document.getElementById('otp_in');
+                const otp_btn = document.getElementById('otp_btn');
+
+                otp_btn.addEventListener('click', () => {
+                    if (otp_inp.value == otp_val) {
+                        alert("Correo electrónico verificado");
+                    }
+                    else {
+                        alert("Codigo invalido");
+                    }
+                })
+            }
+        }
+    );
+}
+    </script>
   </body>
 </html>
