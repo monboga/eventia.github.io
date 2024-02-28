@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificación</title>
+    <!-- main css -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <!-- link del font awesome -->
+    <link rel="stylesheet" href="styles/all.min.css" />
+  </head>
+  <body>
+    <!-- menu de navegación -->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-success">
+      <div class="container-fluid">
+        <a class="navbar-brand me-auto" href="#home">
+          <img src="assets/fime-logo.png" alt="" class="img-logo mx-lg-2" />
+          EVENTIA
+        </a>
+
+        <div
+          class="sidebar offcanvas offcanvas-start"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header text-white border-bottom">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">EVENTIA</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white shadow-none"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a
+                  class="nav-link mx-lg-2 active"
+                  aria-current="page"
+                  href="#home"
+                  >Auditorios</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="#contacto">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <a href="#login" class="btn-login btn btn-outline-light"
+          >Iniciar Sesion</a
+        >
+        <button
+          class="navbar-toggler shadow-none border-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    
+    <!-- footer -->
+    <footer class="bg-success text-white pt-5 pb-4">
+      <div class="container text-center text-md-left">
+        <div class="row text-center text-md-left">
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-white">
+              eventia
+            </h5>
+            <p>Plataforma para la gestión & reservación de eventos</p>
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-white">
+              ¿Qué tenemos?
+            </h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="" class="text-decoration-none text-white"
+                  >Auditorios</a
+                >
+              </li>
+              <li>
+                <a href="" class="text-decoration-none text-white">Contacto</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-white">
+              ¿Eres empleado?
+            </h5>
+            <a href="" class="btn btn-outline-light">Inicia Sesión</a>
+          </div>
+
+          <hr class="mb-4" />
+
+          <div class="row align-items-center">
+            <div class="col-md-7 col-lg-8">
+              <p>Derechos reservados &copy por:</p>
+              <strong class=""></strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- script bootstrap -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
